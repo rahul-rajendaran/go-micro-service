@@ -27,7 +27,7 @@ func RegisterRoutes(r *gin.Engine) {
 	}
 
 	// User forwarding (protected)
-	userTarget, _ := url.Parse("http://localhost:4002") // user-service
+	userTarget, _ := url.Parse("http://user-service:4002") // user-service
 	userProxy := httputil.NewSingleHostReverseProxy(userTarget)
 
 	user := r.Group("/user")
